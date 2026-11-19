@@ -1,0 +1,36 @@
+"""箱位姿 ICP 参数：本项目唯一真源（数值从 yanjiuyuan/constants.py 抄入并固定）。
+
+两个项目不互通：改阈值/裁剪范围只改本文件，不要去改 yanjiuyuan 的那一份。
+"""
+from __future__ import annotations
+
+from pathlib import Path
+
+import numpy as np
+
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+
+# --- ICP 算法参数（25 个，box_icp.py 直接 import） ---
+BOX_BLUE_CLUSTER_EPS = 0.035
+BOX_BLUE_CLUSTER_MIN_POINTS = 80
+BOX_BLUE_DOMINANCE_MARGIN = 0.0
+BOX_BLUE_HUE_RANGE_DEG = (170.0, 280.0)
+BOX_BLUE_MIN_SATURATION = 0.08
+BOX_BLUE_MIN_VALUE = 0.02
+BOX_ICP_MAX_ITERATION = 40
+BOX_MATCH_TARGET_Z_MIN = 0.21
+BOX_MATCH_TARGET_Z_MAX = 0.24
+BOX_MODEL_POINT_SIZE = 0.003
+BOX_OBB_HORIZONTAL_AXIS_MIN_NORM = 0.25
+BOX_OBB_LONG_SHORT_MIN_RATIO = 1.05
+BOX_OUTLIER_NB_NEIGHBORS = 30
+BOX_OUTLIER_STD_RATIO = 2.0
+BOX_REGISTRATION_VOXEL_SIZE = 0.02
+BOX_TARGET_POINT_SIZE = 0.002
+BOX_TARGET_VOXEL_DOWNSAMPLE = 0.008
+BOX_TEMPLATE_NORMAL_Z_ABS_MIN = 0.95
+BOX_TEMPLATE_PLY = PROJECT_DIR / "model" / "box_z_parallel_surface_points.ply"
+BOX_TEMPLATE_TOP_Z_MIN = 0.21
+BOX_X_RANGE = (0.35, 1.2)
+BOX_Y_RANGE = (-0.35, 0.35)
+BOX_Z_RANGE = (0.02, 0.35)
